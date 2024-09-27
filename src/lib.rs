@@ -38,7 +38,7 @@ use core::hash::Hasher;
 #[cfg(not(feature = "std"))]
 extern crate alloc;
 
-pub use crate::any::{CloneAny, Downcast};
+pub use crate::any::{CloneAny, Downcast, IntoBox};
 
 mod any;
 
@@ -53,8 +53,6 @@ macro_rules! everything {
         use alloc::boxed::Box;
 
         use ::$($parent)::+::hash_map::{self, HashMap};
-
-        use crate::any::IntoBox;
 
         /// Raw access to the underlying `HashMap`.
         ///
@@ -596,6 +594,7 @@ pub mod hashbrown {
     #[cfg(doc)]
     use crate::any::CloneAny;
     use crate::any::Downcast;
+    use crate::any::IntoBox;
     use crate::TypeIdHasher;
 
     everything!(
