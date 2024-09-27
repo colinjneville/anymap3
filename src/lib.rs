@@ -54,7 +54,7 @@ macro_rules! everything {
 
         use ::$($parent)::+::hash_map::{self, HashMap};
 
-        use crate::any::{Downcast, IntoBox};
+        use crate::any::IntoBox;
 
         /// Raw access to the underlying `HashMap`.
         ///
@@ -595,6 +595,7 @@ everything!("let mut data = anymap3::AnyMap::new();", std::collections);
 pub mod hashbrown {
     #[cfg(doc)]
     use crate::any::CloneAny;
+    use crate::any::Downcast;
     use crate::TypeIdHasher;
 
     everything!(
