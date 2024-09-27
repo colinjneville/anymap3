@@ -38,7 +38,7 @@ use core::hash::Hasher;
 #[cfg(not(feature = "std"))]
 extern crate alloc;
 
-pub use crate::any::CloneAny;
+pub use crate::any::{CloneAny, Downcast};
 
 mod any;
 
